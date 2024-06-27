@@ -1,5 +1,5 @@
-export EDITOR=vim
-export VISUAL=vim
+export EDITOR=nvim
+export VISUAL=nvim
 
 export PATH=$(echo $PATH | sed -e 's#:\?/mnt/[^:]*##g')
 export PATH=$HOME/.local/bin/:$PATH
@@ -66,6 +66,7 @@ source "${FZF_GIT_HOME}/fzf-git.sh"
 # Misc setup
 setopt autocd
 autoload edit-command-line; zle -N edit-command-line
+bindkey -v
 bindkey -M vicmd v edit-command-line # Vim mode and edit
 
 # History config
@@ -97,12 +98,12 @@ eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/config.toml)"
 TREE_IGNORE="cache|log|logs|node_modules|vendor|target"
 
 alias ..='cd ..'
-alias vim=lvim
+alias vim=nvim
 alias baty='bat -lyaml'
 
 alias ls=' eza --group-directories-first'
-alias l='ls -l --git --icons --no-permissions --no-time --no-user'
-alias ll='ls -l --git --icons'
+alias l='ls -l --git --icons=always --no-permissions --no-time --no-user'
+alias ll='ls -l --git --icons=always'
 alias la='ll -a'
 
 alias lt='ls --tree -D -L 2 -I ${TREE_IGNORE}'
