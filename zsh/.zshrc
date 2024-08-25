@@ -1,5 +1,6 @@
 export EDITOR=nvim
 export VISUAL=nvim
+export GOPATH="$HOME/.local/go"
 
 export PATH=$(echo $PATH | sed -e 's#:\?/mnt/[^:]*##g')
 export PATH=$HOME/.local/bin/:$PATH
@@ -70,9 +71,15 @@ bindkey -v
 bindkey -M vicmd v edit-command-line # Vim mode and edit
 
 # History config
-bindkey "^[[A" history-search-backward # Search history backward with up key
-bindkey "^[[B" history-search-forward # Search history forward with down key
 bindkey '^ ' forward-word # Move forward one word with Ctrl + space
+# Make zsh autocomplete with up arrow
+#autoload -Uz history-search-end
+#zle -N history-beginning-search-backward-end history-search-end
+#zle -N history-beginning-search-forward-end history-search-end
+# bindkey "$terminfo[kcuu1]" history-beginning-search-backward-end
+# bindkey "$terminfo[kcud1]" history-beginning-search-forward-end
+bindkey "$terminfo[kcuu1]" history-beginning-search-backward
+bindkey "$terminfo[kcud1]" history-beginning-search-forward
 
 HISTSIZE=5000
 HISTFILE=$HOME/.zsh_history

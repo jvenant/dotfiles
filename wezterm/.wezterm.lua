@@ -25,9 +25,9 @@ config.inactive_pane_hsb = {
 -- This is where you actually apply your config choices
 
 --config.font = wezterm.font 'MesloLGS NF'
-config.font = wezterm.font_with_fallback({
-	"RobotoMono Nerd Font Mono",
-})
+--config.font = wezterm.font_with_fallback({
+-- config.font = wezterm.font_with_fallback({ "RobotoMono Nerd Font Mono" })
+config.font = wezterm.font("CaskaydiaCove Nerd Font Mono", { weight = "DemiLight" })
 
 config.font_size = 10
 --
@@ -37,7 +37,7 @@ config.font_size = 10
 -- config.enable_tab_bar = false
 config.tab_bar_at_bottom = true
 config.hide_tab_bar_if_only_one_tab = true
-config.use_fancy_tab_bar = true
+config.use_fancy_tab_bar = false
 config.window_frame = {
 	inactive_titlebar_bg = "none",
 	active_titlebar_bg = "none",
