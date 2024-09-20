@@ -78,8 +78,8 @@ bindkey '^ ' forward-word # Move forward one word with Ctrl + space
 #zle -N history-beginning-search-forward-end history-search-end
 # bindkey "$terminfo[kcuu1]" history-beginning-search-backward-end
 # bindkey "$terminfo[kcud1]" history-beginning-search-forward-end
-bindkey "$terminfo[kcuu1]" history-beginning-search-backward
-bindkey "$terminfo[kcud1]" history-beginning-search-forward
+bindkey "$terminfo[kcuu1]" history-search-backward
+bindkey "$terminfo[kcud1]" history-search-forward
 
 HISTSIZE=5000
 HISTFILE=$HOME/.zsh_history
